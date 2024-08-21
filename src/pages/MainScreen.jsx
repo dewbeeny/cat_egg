@@ -1,7 +1,6 @@
 import React from "react";
 import {
   StyleSheet,
-  Button,
   SafeAreaView,
   View,
   Text,
@@ -19,19 +18,19 @@ const MainScreen = ({ navigation }) => {
       <View style={styles.container}>
         <Text style={styles.title}>높은 레벨일수록 더 귀한 사진이다옹</Text>
         <TouchableOpacity
-          style={styles.button}
+          style={[styles.button, styles.level1]}
           onPress={() => navigation.navigate("OneScreen")}
         >
           <Text style={styles.buttonText}>Level 1</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.button}
+          style={[styles.button, styles.level2]}
           onPress={() => navigation.navigate("TwoScreen")}
         >
           <Text style={styles.buttonText}>Level 2</Text>
         </TouchableOpacity>
         <TouchableOpacity
-          style={styles.button}
+          style={[styles.button, styles.level3]}
           onPress={() => navigation.navigate("ThreeScreen")}
         >
           <Text style={styles.buttonText}>Level 3</Text>
@@ -55,20 +54,28 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   button: {
-    backgroundColor: "#FFD700", // 고양이의 황금빛 털을 연상시키는 색상
     paddingVertical: 12,
     paddingHorizontal: 25,
-    borderRadius: 25, // 버튼 모서리를 둥글게
-    marginBottom: 20, // 버튼 사이 간격
-    shadowColor: "#000", // 그림자 색상
+    borderRadius: 25,
+    marginBottom: 20,
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
     shadowRadius: 3,
-    elevation: 5, // 안드로이드 그림자 효과
+    elevation: 5,
   },
   buttonText: {
-    color: "#FFF", // 텍스트를 흰색으로
+    color: "#FFF",
     fontSize: 16,
     fontWeight: "bold",
+  },
+  level1: {
+    backgroundColor: "#F8C8DC", // 연분홍
+  },
+  level2: {
+    backgroundColor: "#DFA48F", // 연갈색
+  },
+  level3: {
+    backgroundColor: "#A56A4F", // 더 진한 연갈색
   },
 });
