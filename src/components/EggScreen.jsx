@@ -11,8 +11,6 @@ import {
 import useShakeAnimation from "../hooks/useShakeAnimation";
 
 const EggScreen = ({ breakPoint, eggImage, randomImage, eggImageSize }) => {
-  console.log(randomImage);
-
   const [shakeStyle, startShake] = useShakeAnimation();
   const [count, setCount] = useState(0);
   const [isImageShown, setIsImageShown] = useState(false);
@@ -31,31 +29,25 @@ const EggScreen = ({ breakPoint, eggImage, randomImage, eggImageSize }) => {
     <SafeAreaView style={{ flex: 1, backgroundColor: "#FFF" }}>
       <View style={styles.container}>
         {count < breakPoint ? (
-          <>
-            <TouchableOpacity
-              onPress={onPress}
-              style={[styles.imageContainer, eggImageSize]}
-            >
-              <Animated.Image
-                source={eggImage}
-                style={[styles.image, shakeStyle]}
-                resizeMode="contain"
-              />
-            </TouchableOpacity>
-          </>
+          <TouchableOpacity
+            onPress={onPress}
+            style={[styles.imageContainer, eggImageSize]}
+          >
+            <Animated.Image
+              source={eggImage}
+              style={[styles.image, shakeStyle]}
+              resizeMode="contain"
+            />
+          </TouchableOpacity>
         ) : (
           <>
             <View style={styles.textContainer}>
               <Text style={styles.textAboveImage}>🌼🩷</Text>
-            </View>
-            <View style={styles.randomImageContainer}>
-              {isImageShown && (
-                <Image
-                  source={randomImage}
-                  style={styles.randomImage}
-                  resizeMode="contain"
-                />
-              )}
+              <Image
+                source={randomImage}
+                style={styles.randomImage}
+                resizeMode="contain"
+              />
             </View>
           </>
         )}
@@ -75,11 +67,14 @@ const styles = StyleSheet.create({
   textContainer: {
     width: "100%",
     alignItems: "center",
-    marginBottom: 20,
+    marginTop: 120,
+    marginBottom: 120,
   },
   imageContainer: {
     justifyContent: "center",
     alignItems: "center",
+    width: "100%",
+    height: "100%",
   },
   image: {
     width: "100%",
@@ -93,13 +88,12 @@ const styles = StyleSheet.create({
   randomImageContainer: {
     justifyContent: "center",
     alignItems: "center",
-    width: "100%",
+    width: "80%", // 이미지를 화면에 맞게 조정
+    height: "50%", // 높이도 적절하게 조정
   },
   randomImage: {
     width: "100%",
-    height: undefined,
-    aspectRatio: 1,
-    maxWidth: "100%",
-    maxHeight: "90%",
+    height: "100%",
+    resizeMode: "contain",
   },
 });

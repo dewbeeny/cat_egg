@@ -1,7 +1,6 @@
 import React from "react";
 import EggScreen from "../../components/EggScreen";
 
-// 이미지 배열을 설정합니다.
 const OneScreen = () => {
   const eggImage = require("./level_1_egg.png");
   const randomImages = [
@@ -10,7 +9,6 @@ const OneScreen = () => {
     require("./assets/3.jpg"),
   ];
 
-  // 무작위로 이미지를 선택합니다.
   const randomImage =
     randomImages[Math.floor(Math.random() * randomImages.length)];
 
