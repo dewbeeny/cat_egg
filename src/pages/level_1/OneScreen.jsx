@@ -1,28 +1,26 @@
 import React from "react";
-import {
-  SafeAreaView,
-  View,
-  Text,
-  TouchableOpacity,
-  Animated,
-} from "react-native";
-import useShakeAnimation from "../../hooks/useShakeAnimation";
+import EggScreen from "../../components/EggScreen";
 
+// 이미지 배열을 설정합니다.
 const OneScreen = () => {
-  const [shakeStyle, startShake] = useShakeAnimation();
+  const eggImage = require("./level_1_egg.png");
+  const randomImages = [
+    require("./assets/1.jpg"),
+    require("./assets/2.jpg"),
+    require("./assets/3.jpg"),
+  ];
+
+  // 무작위로 이미지를 선택합니다.
+  const randomImage =
+    randomImages[Math.floor(Math.random() * randomImages.length)];
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#FFF" }}>
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text style={{ color: "black", fontSize: 20 }}>OneScreen</Text>
-        <TouchableOpacity onPress={startShake}>
-          <Animated.Image
-            source={require("../level_1/level_1_egg.png")}
-            style={[{ width: 200, height: 200 }, shakeStyle]} // 이미지 크기와 애니메이션 스타일 적용
-          />
-        </TouchableOpacity>
-      </View>
-    </SafeAreaView>
+    <EggScreen
+      eggImage={eggImage}
+      randomImage={randomImage}
+      eggImageSize={{ width: "50%", height: "30%" }}
+      breakPoint={10}
+    />
   );
 };
 

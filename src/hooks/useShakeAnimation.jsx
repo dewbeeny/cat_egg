@@ -34,7 +34,7 @@ const useShakeAnimation = () => {
       {
         translateX: shakeAnim.interpolate({
           inputRange: [-1, 1],
-          outputRange: [-10, 10], // 흔들리는 범위 설정
+          outputRange: [-10, 10],
         }),
       },
     ],

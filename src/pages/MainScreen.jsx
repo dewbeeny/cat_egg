@@ -16,7 +16,7 @@ const MainScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#FFF" }}>
       <View style={styles.container}>
-        <Text style={styles.title}>높은 레벨일수록 더 귀한 사진이다옹</Text>
+        <Text style={styles.title}>알을 깨라!🐣</Text>
         <TouchableOpacity
           style={[styles.button, styles.level1]}
           onPress={() => navigation.navigate("OneScreen")}
@@ -70,12 +70,12 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   level1: {
-    backgroundColor: "#F8C8DC", // 연분홍
+    backgroundColor: "#F8C8DC",
   },
   level2: {
-    backgroundColor: "#DFA48F", // 연갈색
+    backgroundColor: "#DFA48F",
   },
   level3: {
-    backgroundColor: "#A56A4F", // 더 진한 연갈색
+    backgroundColor: "#A56A4F",
   },
 });
