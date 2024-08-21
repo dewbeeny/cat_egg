@@ -4,7 +4,8 @@ cat's egg😸 - mini game
 
 ## Preview✨
 
-https://github.com/user-attachments/assets/0f31f331-3bd3-4bc6-8200-51b50f7b4217
+https://github.com/user-attachments/assets/1c44136d-214b-4da4-b028-3419d43157fa
+
 
 
 ## 서비스 소개
